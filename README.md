@@ -3,14 +3,14 @@
 Proyecto de Métodos Numéricos - ITSX
 Implementación de Trapecio y Simpson compuestos con refinamiento automático por tolerancia.
 
-## 📁 Estructura del Paquete
+## Estructura del Paquete
 
 **Orden de pegado / compilación obligatorio:**
 1. TrapecioCompuesto.java
 2. SimpsonCompuesto.java
 3. Main.java
 
-## 📐 Fórmulas Implementadas
+## Fórmulas Implementadas
 
 **h:**
 $$ h = \frac{b-a}{n} $$
@@ -24,7 +24,7 @@ $$ S_n = \frac{h}{3} \left[ f(a) + 4\sum_{impares} f(x_i) + 2\sum_{pares} f(x_i)
 **Criterio de paro automático:**
 $$ |I_{2n} - I_n| < tolerancia $$
 
-## ⚙️ Configuración
+## Configuración
 
 La función a integrar se cambia en **un solo lugar**:
 
