@@ -1,47 +1,62 @@
 # dif_e_Integracion - Integración Numérica Compuesta
 
-Proyecto de Métodos Numéricos - ITSX
-Implementación de Trapecio y Simpson compuestos con refinamiento automático por tolerancia.
+Proyecto de Métodos Numéricos - ITSX. Implementación de las reglas del Trapecio y Simpson 1/3 compuestas con refinamiento automático por tolerancia.
 
-## Estructura del Paquete
+## 📦 Contenido
+- `dif_e_Integracion/TrapecioCompuesto.java` - Clase base con `funcion()` y `calcularH()`
+- `dif_e_Integracion/SimpsonCompuesto.java` - Implementación Simpson (depende de TrapecioCompuesto)
+- `dif_e_Integracion/Main.java` - Programa principal comparativo
 
-**Orden de pegado / compilación obligatorio:**
-1. TrapecioCompuesto.java
-2. SimpsonCompuesto.java
-3. Main.java
+## 📐 Fundamento
+`h = (b-a)/n`
 
-## Fórmulas Implementadas
+Trapecio: `Tn = h/2 * [f(a) + f(b) + 2*sum(f(xi))]`
+Simpson: `Sn = h/3 * [f(a) + f(b) + 4*sum(impares) + 2*sum(pares)]`
 
-**h:**
-$$ h = \frac{b-a}{n} $$
+Criterio de paro: `|I_2n - I_n| < tolerancia`. n se duplica cada iteración, garantizando n par para Simpson.
 
-**Trapecio Compuesto - Error O(h²):**
-$$ T_n = \frac{h}{2} \left[ f(a) + 2\sum_{i=1}^{n-1} f(x_i) + f(b) \right] $$
+## 🚀 Compilación y Ejecución
 
-**Simpson 1/3 Compuesto - Error O(h⁴) - requiere n par:**
-$$ S_n = \frac{h}{3} \left[ f(a) + 4\sum_{impares} f(x_i) + 2\sum_{pares} f(x_i) + f(b) \right] $$
+Requisitos: JDK 8 o superior
 
-**Criterio de paro automático:**
-$$ |I_{2n} - I_n| < tolerancia $$
+```bash
+# Clonar repositorio
+git clone https://github.com/TU_USUARIO/dif_e_Integracion.git
+cd dif_e_Integracion
 
-## Configuración
+# Compilar
+javac dif_e_Integracion/*.java
 
-La función a integrar se cambia en **un solo lugar**:
+# Ejecutar
+java dif_e_Integracion.Main
+# dif_e_Integracion - Integración Numérica Compuesta
 
-En `TrapecioCompuesto.java`:
-```java
-public static double funcion(double x) {
-    // Para examen Problema 6: f(x)=x²
-    // return x*x;
-    // Para Main actual: f(x)=sin(x)
-    return Math.sin(x);
-}
-INTEGRACION NUMERICA
+Proyecto de Métodos Numéricos - ITSX. Implementación de las reglas del Trapecio y Simpson 1/3 compuestas con refinamiento automático por tolerancia.
 
-Trapecio Compuesto
-n final = 1024
-Resultado = 1.99999843
+## 📦 Contenido
+- `dif_e_Integracion/TrapecioCompuesto.java` - Clase base con `funcion()` y `calcularH()`
+- `dif_e_Integracion/SimpsonCompuesto.java` - Implementación Simpson (depende de TrapecioCompuesto)
+- `dif_e_Integracion/Main.java` - Programa principal comparativo
 
-Simpson Compuesto
-n final = 64
-Resultado = 2.00000006
+## 📐 Fundamento
+`h = (b-a)/n`
+
+Trapecio: `Tn = h/2 * [f(a) + f(b) + 2*sum(f(xi))]`
+Simpson: `Sn = h/3 * [f(a) + f(b) + 4*sum(impares) + 2*sum(pares)]`
+
+Criterio de paro: `|I_2n - I_n| < tolerancia`. n se duplica cada iteración, garantizando n par para Simpson.
+
+## 🚀 Compilación y Ejecución
+
+Requisitos: JDK 8 o superior
+
+```bash
+# Clonar repositorio
+git clone https://github.com/TU_USUARIO/dif_e_Integracion.git
+cd dif_e_Integracion
+
+# Compilar
+javac dif_e_Integracion/*.java
+
+# Ejecutar
+java dif_e_Integracion.Main
